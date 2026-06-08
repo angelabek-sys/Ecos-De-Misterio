@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Playlist - Canserbero</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #050a3f;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .contenedor-centrado {
+            margin-bottom: 20px;
+        }
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .reproductor {
+            background-color: #242424;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        audio {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .playlist {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+        /* Clase base para los elementos de la lista */
+        .track-item {
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .track-item:hover {
+            background-color: #1db954;
+        }
+        .track-item.active {
+            background-color: #1db954;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-centrado">
+        <img src="Canserbero.png" alt="Imagen de Canserbero" class="img-fluid">
+    </div>
+
+    <div class="reproductor">
+        <h2 id="titulo-cancion">Selecciona una canción</h2>
+        <audio id="audio-player" controls></audio>
+        <ul class="playlist" id="playlist">
+          
+        </ul>
+    </div>
+
+    <script>
+        const canciones = [
+            { titulo: "Querer Querernos", "archivo": "1.mp3" },
+            { titulo: "De la Vida Como Pelicula, Tragedia, Comedia y Ficcion", "archivo": "2.mp3" },
+            { titulo: "Maquiavelico", "archivo": "3.mp3" }
+        ];
+
+        let cancionActual = 0;
+        const audioPlayer = document.getElementById('audio-player');
+        const tituloCancion = document.getElementById('titulo-cancion');
+        const playlistElement = document.getElementById('playlist');
+
+        canciones.forEach((cancion, index) => {
+            const li = document.createElement('li');
+            li.textContent = cancion.titulo;
+            li.classList.add('track-item'); // Se asigna la clase base limpia
+            li.addEventListener('click', () => {
+                cambiarCancion(index);
+                audioPlayer.play();
+            });
+            playlistElement.appendChild(li);
+        });
+
+
+        function cambiarCancion(index) {
+           audioPlayer.src = canciones[index].archivo;
+            tituloCancion.textContent = canciones[index].titulo;
+            audioPlayer.play();
+
+            const items = playlistElement.getElementsByTagName('li');
+            for (let i = 0; i < items.length; i++) {
+                items[i].classList.remove('active');
+            }
+            items[cancionActual].classList.add('active');
+        }
+
+        audioPlayer.addEventListener('ended', () => {
+            cancionActual = (cancionActual + 1) % canciones.length;
+            cambiarCancion(cancionActual);
+            audioPlayer.play();
+        });
+
+        
+        if (canciones.length > 0) {
+            cambiarCancion(0);
+        }
+    </script>
+</body>
+</html>

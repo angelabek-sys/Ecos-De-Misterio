@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEFFREY DAHMER</title>
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://jsdelivr.net">
+    
+
+    <link rel="stylesheet" href="JeffreyDahmer.css">
+</head>
+<body>
+       <div class="contenedor-centrado">
+  <img src="JeffreyDahmer.png" alt="Imagen de Jeffrey Dahmer" class="img-fluid">
+</div>
+        <title>ADIVINA LAS PALABRAS</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f7f7f7;
+        padding: 20px;
+    }
+    #palabra {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2em;
+        letter-spacing: 10px;
+        margin: 20px 0;
+        color:#f7f7f7
+    }
+    input {
+        padding: 10px;
+        font-size: 1em;
+        width: 50px;
+        text-align: center;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 1em;
+        margin-left: 10px;
+    }
+    #mensaje {
+        font-weight: bold;
+        margin-top: 20px;
+        color:azure
+    }
+</style>
+</head>
+<hr class="text-white my-5">
+<h1> ADIVINA LAS PALABRAS</h1>
+<p>Introduce una letra y trata de descubrir la palabra antes de quedarte sin intentos.</p>
+
+<div id="palabra"></div>
+<input type="text" id="letra" maxlength="1">
+<button onclick="probarLetra()">Probar</button>
+
+<p>Intentos restantes: <span id="intentos"></span></p>
+<div id="mensaje"></div>
+
+<script>
+   
+    const palabras = ["MONSTRUO", "CANIBAL", "PSICOPATA", "ASESINO", "PERPETUA"];
+     let palabraSecreta = palabras[Math.floor(Math.random() * palabras.length)];
+    let letrasAdivinadas = Array(palabraSecreta.length).fill("_");
+    let intentosRestantes = 6;
+
+    document.getElementById("palabra").textContent = letrasAdivinadas.join(" ");
+    document.getElementById("intentos").textContent = intentosRestantes;
+
+    function probarLetra() {
+        const input = document.getElementById("letra");
+        const letra = input.value.toLowerCase();
+        input.value = "";
+
+        // Validación de entrada
+        if (!/^[a-zñ]$/i.test(letra)) {
+            alert("Introduce una sola letra válida.");
+            return;
+        }
+
+        let acierto = false;
+        for (let i = 0; i < palabraSecreta.length; i++) {
+            if (palabraSecreta[i].toLowerCase() === letra){
+                letrasAdivinadas[i] = palabraSecreta[i];
+                acierto = true;
+            }
+        }
+
+        if (!acierto) {
+            intentosRestantes--;
+        }
+
+        
+        document.getElementById("palabra").textContent = letrasAdivinadas.join(" ");
+        document.getElementById("intentos").textContent = intentosRestantes;
+
+        if (!letrasAdivinadas.includes("_")) {
+            document.getElementById("mensaje").textContent = "🎉 ¡Ganaste! La palabra era: " + palabraSecreta;
+            deshabilitarJuego();
+        } else if (intentosRestantes <= 0) {
+            document.getElementById("mensaje").textContent = "💀 Perdiste. La palabra era: " + palabraSecreta;
+            deshabilitarJuego();
+        }
+    }
+
+    function deshabilitarJuego() {
+        document.getElementById("letra").disabled = true;
+        document.querySelector("button").disabled = true;
+    }
+</script>
+</body>
+</html>
