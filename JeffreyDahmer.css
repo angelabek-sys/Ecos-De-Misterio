@@ -1,0 +1,20 @@
+body {
+  background: linear-gradient(135deg, #000000, #171575);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+
+.contenedor-centrado {
+  text-align: center; 
+}
+
+
+h1{
+    color:rgb(245, 245, 245)
+}
+
+p{
+    color:silver;
+}
