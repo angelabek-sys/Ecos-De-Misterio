@@ -1,3 +1,11 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+
 body {
   background: linear-gradient(135deg, #000000, #171575);
   font-family: Arial, sans-serif;
