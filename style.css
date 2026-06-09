@@ -1,4 +1,11 @@
+html{
+    scroll-behavior: smooth;
+}
 
+section{
+    height: 100vh;
+    padding: 50px;
+}
 body {
   background: linear-gradient(135deg, #000000, #171575);
   font-family: Arial, sans-serif;
