@@ -32,10 +32,9 @@
         }
 
         .contenedor {
-            background-color: rgb(253, 253, 253);
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(231, 228, 228, 0.986);
+            box-shadow: 0 5px 15px rgb(255, 255, 255);
             width: 100%;
             max-width: 500px;
         }
@@ -100,7 +99,7 @@
         const preguntas = [
             {
                 pregunta: "¿En qué departamento se encuentra la histórica casa asociada a Fructuoso Rivera mencionada en las leyendas?",
-                opciones: ["Durazno", "Maaldonado", "Colonia"],
+                opciones: ["Durazno", "Maldonado", "Colonia"],
                 respuesta: "Durazno"
             },
             {
@@ -131,7 +130,7 @@
             preguntas[preguntaActual].opciones.forEach(opcion => {
                 const boton = document.createElement("button");
                 boton.textContent = opcion;
-                boton.className = "btn btn-outline-primary";
+                boton.className = "btn btn-secondary";
 
                 boton.onclick = () => verificarRespuesta(opcion, boton);
 

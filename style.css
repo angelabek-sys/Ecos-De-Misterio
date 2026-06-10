@@ -1,3 +1,4 @@
+
 body {
   background: linear-gradient(135deg, #000000, #171575);
   font-family: Arial, sans-serif;
@@ -54,7 +55,7 @@ body {
 }
 
 .custom-list {
-  text-align: flex;
+  text-align: 20px;
   margin-left: 20px;
   color: #f1eaea;
   font-size: 15px;
@@ -145,4 +146,15 @@ body {
   height: 100%;
   object-fit: cover; /* Mantiene la proporción de la foto sin estirarla */
 }
+ footer{
+    background: linear-gradient(180deg, #12051d, #000000);
+}
 
+footer h4,
+footer h5{
+    color: #b26cff;
+}
+
+footer a:hover{
+    color: #b26cff !important;
+}
