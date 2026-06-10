@@ -55,7 +55,7 @@ body {
 }
 
 .custom-list {
-  text-align: flex;
+  text-align: 20px;
   margin-left: 20px;
   color: #f1eaea;
   font-size: 15px;
