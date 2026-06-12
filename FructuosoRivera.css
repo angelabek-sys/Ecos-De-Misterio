@@ -8,8 +8,34 @@ body {
 
 .contenedor-centrado img {
   width: 500 px
+}
 
+.reproductor-terror{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
 
+.reproductor-terror audio{
+    width: 450px;
+    border-radius: 15px;
+    box-shadow:
+        0 0 10px #00028b,
+        0 0 20px #5f008b,
+        0 0 40px #4b0023;
+    filter: contrast(1.1);
+}
 
+.reproductor-terror audio::-webkit-media-controls-panel{
+    background: linear-gradient(to right, #0a0a0a, #3120d1f1);
+}
 
+.reproductor-terror audio::-webkit-media-controls-current-time-display,
+.reproductor-terror audio::-webkit-media-controls-time-remaining-display{
+    color: #ff4d4d;
+}
+
+.reproductor-terror audio::-webkit-media-controls-play-button,
+.reproductor-terror audio::-webkit-media-controls-mute-button{
+    filter: hue-rotate(320deg);
 }
