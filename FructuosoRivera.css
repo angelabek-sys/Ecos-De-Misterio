@@ -24,3 +24,16 @@ body
 img {
     margin-top: 20px;
 }
+
+ footer{
+    background: linear-gradient(180deg, #12051d, #000000);
+}
+
+footer h4,
+footer h5{
+    color: #b26cff;
+}
+
+footer a:hover{
+    color: #b26cff !important;
+}
