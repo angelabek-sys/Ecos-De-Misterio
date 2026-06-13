@@ -18,26 +18,20 @@ body
     margin: 20px;
 }
 
-.reproductor-terror audio{
+.audio-terror{
     width: 450px;
     border-radius: 15px;
     box-shadow:
-        0 0 10px #00028b,
-        0 0 20px #5f008b,
-        0 0 40px #4b0023;
-    filter: contrast(1.1);
+        0 0 10px #060218,
+        0 0 25px #0f034d,
+        0 0 50px #2637d4;
 }
 
-.reproductor-terror audio::-webkit-media-controls-panel{
-    background: linear-gradient(to right, #0a0a0a, #3120d1f1);
+.audio-terror::-webkit-media-controls-panel{
+    background: linear-gradient(to right, #12065a, #11084f);
 }
 
-.reproductor-terror audio::-webkit-media-controls-current-time-display,
-.reproductor-terror audio::-webkit-media-controls-time-remaining-display{
-    color: #ff4d4d;
-}
-
-.reproductor-terror audio::-webkit-media-controls-play-button,
-.reproductor-terror audio::-webkit-media-controls-mute-button{
-    filter: hue-rotate(320deg);
+.audio-terror:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
 }
