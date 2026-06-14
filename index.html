@@ -15,16 +15,65 @@
 </head>
 
 <body>
- <div class="menu">
-        <a href="index.html">Inicio</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
 
-        <li><a href="Canserbero.html">Canserbero</a>
+        <!-- Logo/Título -->
+        <a class="navbar-brand fw-bold" href="#">
+            ECOS DE MISTERIO
+        </a>
 
 
-        <form class="buscador">
-            <input type="text" placeholder="Buscar...">
-            <button type="submit"><i class="bi bi-search"></i></button>
-        </form>
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="menuNavbar">
+            <ul class="navbar-nav ms-auto">
+
+                <!-- Historias desplegable -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#"
+                       role="button"
+                       data-bs-toggle="dropdown">
+                        Historias
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li><a class="Canserbero" href="Canserbero.html">Canserbero</a></li>
+                        <li><a class="Jeffrey Dahmer" href="JeffreyDahmer.html">Jeffrey Dahmer</a></li>
+                        <li><a class="Fructuoso Rivera" href="FructuosoRivera.html">Fructuoso Rivera</a></li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item">
+                    <li class="nav-item">
+    <a class="nav-link" href="#Equipo">Equipo</a>
+                </li>
+
+                
+                <li class="nav-item">
+                    <a class="nav-link" href=#Contacto>Contacto</a>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</nav>
+<div class="container text-center mt-5">
+
+    <form class="d-flex justify-content-center">
+        <input type="search" class="form-control buscador"
+               placeholder="Buscar...">
+    </form>
+
+</div>
     </div>
 </nav>
     <div class="container py-5 text-center">
@@ -118,7 +167,7 @@
 </audio>
 
   
-  <div class="contenedor-tarjetas">
+  <div class="contenedor-tarjetas" id="Equipo">
    
     <div class="tarjeta">
         <div class="perfil-contenedor">
@@ -146,7 +195,6 @@
     <div class="container">
         <div class="row">
 
-            <!-- Información -->
             <div class="col-md-4 mb-4">
                 <h4>Ecos de Misterio</h4>
                 <p>
@@ -155,7 +203,7 @@
                 </p>
             </div>
 
-            <!-- Enlaces -->
+            
             <div class="col-md-4 mb-4">
                 <h5>Enlaces rápidos</h5>
                 <ul class="list-unstyled">
@@ -164,8 +212,8 @@
                 </ul>
             </div>
 
-            <!-- Contacto -->
-            <div class="col-md-4 mb-4">
+            
+            <div class="col-md-4 mb-4" id="Contacto">
                 <h5>Contacto</h5>
                 <p>Email: contacto@ecosdemisterio.com</p>
                 <p>Canelones, Uruguay</p>
