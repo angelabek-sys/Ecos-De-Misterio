@@ -9,7 +9,7 @@ body
 }
 
 .contenedor-centrado img {
-  width: 500 px
+  width: 1000px;
 }
 
 .reproductor-terror{
@@ -24,7 +24,7 @@ body
     box-shadow:
         0 0 10px #060218,
         0 0 25px #0f034d,
-        0 0 50px #2637d4;
+        0 0 50px #74757c;
 }
 
 .audio-terror::-webkit-media-controls-panel{
@@ -34,4 +34,34 @@ body
 .audio-terror:hover{
     transform: scale(1.03);
     transition: 0.3s;
+}
+
+.comentarios-mini{
+    width: 500px !important;
+    max-width: 500px !important;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.comentarios-mini input,
+.comentarios-mini textarea {
+    width: 100%;
+}
+
+.comentarios-mini h6{
+    color: white;
+    margin-bottom: 15px;
+}
+
+.comentarios-mini .form-control{
+    background: #738096;
+    color: white;
+    border: 1px solid rgb(232, 227, 227);
+}
+
+.comentarios-mini .form-control:focus{
+    background: #9aadcf;
+    color: white;
+    box-shadow: none;
+    border-color: #52555a;
 }
