@@ -228,5 +228,30 @@
     </div>
 </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+function publicarComentario() {
+
+    let nombre = document.getElementById("nombre").value;
+    let comentario = document.getElementById("comentario").value;
+
+    if (nombre === "" || comentario === "") {
+        alert("Completa todos los campos");
+        return;
+    }
+
+    let nuevoComentario = document.createElement("div");
+
+    nuevoComentario.classList.add("alert", "alert-light", "mt-2");
+
+    nuevoComentario.innerHTML =
+        "<strong>" + nombre + ":</strong><br>" + comentario;
+
+    document.getElementById("listaComentarios")
+            .appendChild(nuevoComentario);
+
+    document.getElementById("nombre").value = "";
+    document.getElementById("comentario").value = "";
+}
+</script>
 </body>
 </html>

@@ -65,3 +65,9 @@ body
     box-shadow: none;
     border-color: #52555a;
 }
+
+
+#listaComentarios{
+    margin-top: 15px;
+    text-align: left;   
+}
